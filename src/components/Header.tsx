@@ -60,14 +60,14 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
-            <Button 
+            {/* <Button 
               onClick={() => onNavigate('admin')}
               variant="outline" 
               size="sm"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
               Admin Login
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,7 +111,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                   {item.label}
                 </button>
               ))}
-              <Button 
+              {/* <Button 
                 onClick={() => {
                   onNavigate('admin');
                   setIsMenuOpen(false);
@@ -121,7 +121,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground justify-start"
               >
                 Admin Login
-              </Button>
+              </Button> */}
             </nav>
           </div>
         )}

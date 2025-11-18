@@ -7,7 +7,7 @@ import { Badge } from './ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Label } from './ui/label';
 import { Separator } from './ui/separator';
-import { X, Save, Eye } from 'lucide-react';
+import { X, Save } from 'lucide-react';
 
 interface Post {
   id: string;

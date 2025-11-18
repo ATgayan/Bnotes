@@ -8,6 +8,12 @@ import { Footer } from './components/Footer';
 import { BlogPost } from './components/BlogPost';
 import { AdminDashboard } from './components/AdminDashboard';
 
+import { db } from './lib/firbaseConfig';
+import { collection, getDocs } from 'firebase/firestore';
+
+
+
+
 interface Post {
   id: string;
   title: string;
@@ -24,6 +30,23 @@ interface Post {
 }
 
 export default function App() {
+
+
+  React.useEffect(() => {
+  const testFirebase = async () => {
+    try {
+      // Try to fetch documents from a test collection
+      const querySnapshot = await getDocs(collection(db, "testCollection"));
+      console.log("✅ Firebase DB connected! Docs count:", querySnapshot.size);
+    } catch (error) {
+      console.error("❌ Firebase DB connection failed:", error);
+    }
+  };
+
+  testFirebase();
+}, []);
+
+
   const [currentPage, setCurrentPage] = React.useState('home');
   const [selectedPostId, setSelectedPostId] = React.useState<string | null>(null);
   
