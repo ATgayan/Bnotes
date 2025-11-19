@@ -1,7 +1,9 @@
 import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
 import { TextAnimate } from "./ui/text-animate"
-import { NumberTicker } from "./ui/number-ticker"
+import { NumberTicker } from "./ui/number-ticker";
+
+import { Navigation } from 'lucide-react';
 
 interface HeroProps {
 
@@ -19,25 +21,25 @@ export function Hero({ onNavigate }: HeroProps) {
         <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-blue-600/5 blur-3xl"></div>
       </div>
       
-      <div className="relative container mx-auto  lg:px-8 py-14 lg:py-5">
+      <div className="relative container mx-auto  lg:px-4 py-14 lg:py-2">
            
           {/* Main Heading */}
-          <div className="space-y-4  flex">
-           <div className="mx-auto h-[600px] w-[50%] align-middle align-center  p-10 flex flex-col justify-center gap-6">
+          <div className=" flex">
+           <div className="mx-auto h-[400px] w-[50%] align-middle align-center flex flex-col justify-center gap-6">
             <TextAnimate animation="blurInUp" by="character" once>Exploring the Future of Innovation</TextAnimate>
             <TextAnimate className="text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto" animation="blurInUp" by="character" once>
               Dive deep into the latest trends in AI, cybersecurity, emerging technologies, and startup innovations. 
               Stay ahead with expert insights and cutting-edge analysis.
             </TextAnimate>
            </div>
-           <div  className='flex justify-center items-center mx-auto h-[50%] w-[60%]'>
-            <img src="/src/assets/bg_image.png" alt="TechInsights Logo" className="heroimage-fade-in mx-auto h-[100%] w-[100%]" />
+           <div  className='flex justify-center items-center mx-auto h-[30%] w-[30%] '>
+            <img src="/src/assets/bg_image.png" alt="TechInsights Logo" className="heroimage-fade-in mx-auto" />
 
            </div>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 z-0">
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-xl shadow-lg shadow-primary/25 transition-all duration-300 hover:shadow-primary/40 hover:scale-105"

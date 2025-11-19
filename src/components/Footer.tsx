@@ -97,7 +97,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center">
                 <span className="text-primary-foreground font-bold">T</span>
               </div>
-              <span className="text-xl font-bold text-foreground">TechNova</span>
+              <span className="text-xl font-bold text-foreground">Bnots</span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Exploring the future of innovation through cutting-edge technology insights, 

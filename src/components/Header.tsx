@@ -3,12 +3,13 @@ import { Search, Menu, X } from 'lucide-react';
 
 import { Input } from './ui/input';
 
+
 interface HeaderProps {
   currentPage: string;
   onNavigate: (page: string) => void;
 }
 
-export function Header({ currentPage, onNavigate }: HeaderProps) {
+export function Header( { currentPage, onNavigate }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [searchQuery, setSearchQuery] = React.useState('');
 
@@ -27,10 +28,10 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             className="flex items-center space-x-2 cursor-pointer"
             onClick={() => onNavigate('home')}
           >
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center">
-              <span className="text-primary-foreground font-bold">T</span>
+            <div>
+              <img src ="assest/images/logo.png" alt ="Bnots Logo" className="h-8 w-8 rounded-sm object-cover p-1"/>
             </div>
-            <span className="text-xl font-bold text-foreground">TechNova</span>
+            <span className="text-xl font-bold text-foreground">Bnots</span>
           </div>
  
           {/* Desktop Navigation */}
@@ -39,9 +40,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               <button
                 key={item.page}
                 onClick={() => onNavigate(item.page)}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  currentPage === item.page ? 'text-primary' : 'text-muted-foreground'
-                }`}
+                className={`text-foreground hover:text-primary transition-colors ${currentPage === item.page ? 'font-bold' : 'font-medium'}`}
               >
                 {item.label}
               </button>
@@ -60,14 +59,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
-            {/* <Button 
-              onClick={() => onNavigate('admin')}
-              variant="outline" 
-              size="sm"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-            >
-              Admin Login
-            </Button> */}
+           
           </div>
 
           {/* Mobile Menu Button */}
@@ -104,24 +96,12 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                     onNavigate(item.page);
                     setIsMenuOpen(false);
                   }}
-                  className={`text-left py-2 px-3 rounded-lg text-sm font-medium transition-colors hover:bg-accent ${
-                    currentPage === item.page ? 'text-primary bg-accent' : 'text-muted-foreground'
-                  }`}
+                 
                 >
                   {item.label}
                 </button>
               ))}
-              {/* <Button 
-                onClick={() => {
-                  onNavigate('admin');
-                  setIsMenuOpen(false);
-                }}
-                variant="outline" 
-                size="sm"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground justify-start"
-              >
-                Admin Login
-              </Button> */}
+              
             </nav>
           </div>
         )}
